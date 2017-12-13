@@ -133,7 +133,7 @@ footer {
 }
 
 .navigation-arrows-container img {
-  max-height: 50px;
+  max-height: 40px;
   cursor: pointer;
 }
 
@@ -142,6 +142,8 @@ footer {
   z-index: 102;
   text-decoration: none;
   margin-right: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .photos {
@@ -180,13 +182,12 @@ footer {
 }
 
 .tekst-left, .tekst-right {
-  font-size: 1.38em;
+  font-size: 1.05em;
 	line-height: 1.12em;
   padding-left: 12px;
   padding-right: 12px;
-  margin-top: 10pxx;
+  margin-top: 10px;
 	color: black;
-  max-width: 340px;
 }
 
 /* close buttons */
