@@ -21,9 +21,9 @@ var currentRequestId = 0;
 
 function preparePage(page) {
     if (currentRequestId === 0) {
-        $('a.previous').css('opacity', 0);
+        $('div.previous').css('opacity', 0);
     } else {
-        $('a.previous').css('opacity', 1);
+        $('div.previous').css('opacity', 1);
     }
 
     $('#left-slide-button').html(content[page][0]);
