@@ -6,6 +6,8 @@
 // dit zijn de linker en rechterknop van de footer, gescheiden door een komma, html mag, maar wees zuinig
 //
 
+
+// VARIABLES
 var content = {
     'page-1': ['About <em>Sofie Gagelmans</em>', '<em>Being Dyslexic</em>'],
     'page-2': ['About <em>Sofie Gagelmans</em>', '<em>Playing with Dyslexia</em>'],
@@ -18,6 +20,47 @@ var content = {
 
 var pages = Object.keys(content);
 var currentRequestId = 0;
+var screenBreakpoint = 1000;
+
+var open = {
+    right: false,
+    left: false,
+}
+
+
+// SLIDER FUNCTIONS
+
+function openSlider(side) {
+    if($(window).width() < screenBreakpoint) {
+        closeSlider(side !== 'right' ? 'right' : 'left' )
+    }
+    $('#slider-from-' + side + ' a.x').show();
+    document.getElementById("slider-from-" + side).style[side] = "0";
+    open[side] = true;
+    return false;
+}
+
+function closeSlider(side) {
+    var needsPercNao = '50';
+    if($(window).width() < screenBreakpoint) {
+        needsPercNao = '100';
+        $('#slider-from-' + side + ' a.x').hide();
+    }
+    document.getElementById("slider-from-" + side).style[side] = "-" + needsPercNao + "%";
+    open[side] = false;
+    return false;
+}
+
+function toggleSlider(side) {
+    if(open[side]) {
+        closeSlider(side);
+    } else {
+        openSlider(side);
+    }
+}
+
+
+// PAGEFUNCTIONS
 
 function preparePage(page) {
     if (currentRequestId === 0) {
@@ -33,11 +76,16 @@ function preparePage(page) {
 }
 
 function loadPage(page) {
+    // tell variables both panes are closed :(
+    open.right = false;
+    open.left = false;
     preparePage(page);
+
+    // load with cachebusting
     $(".fade-container").load(page + '.html?_' + (new Date()).getTime(), function () {
         $(".fade-container").fadeIn(200);
         const container = document.querySelector('#style-2');
-        // TODO: add check here:
+
         new PerfectScrollbar(container);
         history.replaceState({ page: page }, page, "#" + page);
     });
@@ -80,3 +128,16 @@ $(window).bind("popstate", function (e) {
         loadPage(state.page);
     }
 });
+
+window.addEventListener("load",function() {
+	// Set a timeout...
+	setTimeout(function(){
+		// Hide the address bar!
+		window.scrollTo(0, 1);
+	}, 0);
+});
+
+window.onresize = function() {
+    closeSlider('left');
+    closeSlider('right');
+}
