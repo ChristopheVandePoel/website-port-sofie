@@ -1,0 +1,46 @@
+/* Container style */
+.ps {
+  overflow: hidden;
+  -ms-overflow-style: none;
+}
+
+/* Scrollbar rail styles */
+.ps__rail-y {
+  display: block;
+  opacity: 1;
+  position: absolute;
+}
+
+.ps:hover > .ps__rail-y,
+.ps--focus > .ps__rail-y,
+.ps--scrolling-y > .ps__rail-y {
+  opacity: 0.8;
+}
+.ps__rail-y {
+  margin: 10px 0;
+}
+
+/* Scrollbar thumb styles */
+.ps__thumb-y {
+  background-color: blue;
+  border-radius: 2em;
+  width: 0.5em;
+  right: 0.5em;
+  position: fixed;
+  margin-top: 10px;
+}
+
+/* MS supports */
+@supports (-ms-overflow-style: none) {
+.ps {
+  overflow: auto;
+ }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+.ps {
+  overflow: auto;
+ }
+}
+
+
