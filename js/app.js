@@ -13,9 +13,10 @@ var content = {
     'page-2': ['About <em>Sofie Gagelmans</em>', '<em>Playing with Dyslexia</em>'],
     'page-3': ['About <em>Sofie Gagelmans</em>', '<em>LUCA Showcase</em>'],
     'page-4': ['About <em>Sofie Gagelmans</em>', '<em>Art Book Fair</em>'],
-    'page-5': ['About <em>Sofie Gagelmans</em>', '<em>Redesign for a Belgian Magazine</em>'],
-    'page-6': ['About <em>Sofie Gagelmans</em>', '<em>Series of Posters</em>'],
-    'page-7': ['About <em>Sofie Gagelmans</em>', '<em>Everything Twice</em>']
+    'page-5': ['About <em>Sofie Gagelmans</em>', '<em>Redesign for a magazine</em>'],
+    'page-6': ['About <em>Sofie Gagelmans</em>', '<em>Redesign for a company</em>'],
+    'page-7': ['About <em>Sofie Gagelmans</em>', '<em>Series of posters</em>'],
+    'page-8': ['About <em>Sofie Gagelmans</em>', '<em>Everything Twice</em>']
 }
 
 var pages = Object.keys(content);
