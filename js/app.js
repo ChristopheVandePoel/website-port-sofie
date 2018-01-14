@@ -90,6 +90,11 @@ function loadPage(page) {
         new PerfectScrollbar(container);
         history.replaceState({ page: page }, page, "#" + page);
     });
+    setTimeout(function(){
+		// Hide the address bar!
+		$('#style-2').scrollTop(1);
+		$('#style-2').scrollTop(0);
+	}, 200);
 }
 
 function loadNextPage(event) {
@@ -134,8 +139,9 @@ window.addEventListener("load",function() {
 	// Set a timeout...
 	setTimeout(function(){
 		// Hide the address bar!
-		window.scrollTo(0, 1);
-	}, 0);
+		$('#style-2').scrollTop(1);
+		$('#style-2').scrollTop(0);
+	}, 900);
 });
 
 window.onresize = function() {

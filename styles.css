@@ -203,10 +203,9 @@ footer {
   height: 2em;
   width: 2em;
   right: 1.3em;
-  top: 4em;
   display: block;
   position: absolute;
-  /*bottom: 8%;*/
+  bottom: 2%;
 }
 
 
@@ -255,7 +254,7 @@ footer {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
   body {
     font-size: 18px;
   }
