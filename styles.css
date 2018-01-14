@@ -60,6 +60,7 @@ em {
 body, html {
 	font-family: Georgia;
   font-style: normal;
+  font-size: 1.085em;
 	font-kerning: normal;
 	font-size-adjust: auto;
 	font-weight: normal;
@@ -73,7 +74,7 @@ footer {
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 5%;
+  height: 8%;
   width: 100%;
   background-color: white;
 }
@@ -97,8 +98,10 @@ footer {
 }
 
 .footer-left, .footer-right {
+  font-size: 1.35em;
   width: 50%;
   text-decoration: none;
+  background-color: white;
 	color: black;
   z-index: 100;
   display: flex;
@@ -108,7 +111,6 @@ footer {
 
 .footer-left {
   flex: 3;
-  margin-right:20px;
 }
 
 .footer-right {
@@ -117,16 +119,14 @@ footer {
 
 .footer-left a, .footer-right a {
   text-decoration: none;
+  /* width: 18em; */
   color: black;
   display: block;
-}
-
-.footer-left a {
-  margin-left: 15px;
+  margin-left: 30px;
 }
 
 .footer-left a:hover, .footer-right a:hover {
-  color: blue;
+  color: #0000FF;
   text-decoration: none;
 }
 
@@ -136,6 +136,8 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  position: relative;
+  right: 25px;
 }
 
 .navigation-arrows-container img {
@@ -164,13 +166,13 @@ footer {
 
 /* scrollbar styling */
 #style-2 {
-  height: 95%;
+  height: 92%;
   position: relative;
 }
 
 /* sliders left/right */
 .slider-left, .slider-right {
-  height: 95%;
+  height: 92%;
   width: 50%;
   position: fixed;
 	overflow: visible;
@@ -188,23 +190,25 @@ footer {
 }
 
 .tekst-left, .tekst-right {
-  font-size: 1.05em;
-	line-height: 1.12em;
-  padding-left: 12px;
-  padding-right: 12px;
-  margin-top: 10px;
-	color: black;
+  font-size: 1.38em;
+	line-height: 1.18em;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  margin-top: 0.35em;
+  color: black;
 }
 
 /* close buttons */
 .x {
   height: 2em;
   width: 2em;
-  display: block;
   right: 1.3em;
+  top: 4em;
+  display: block;
   position: absolute;
   /*bottom: 8%;*/
 }
+
 
   .x:before, .x:after {
   content: "";
